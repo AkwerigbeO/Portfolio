@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Okeoghene Akwerigbe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-color: #f5f7fa;
+      --text-color: #333;
+      --primary: #1f2937;
+      --accent: #3b82f6;
+      --card-bg: white;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #f5f5f5;
+      --primary: #111827;
+      --card-bg: #2b2b2b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    .nav-logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.6em;
+      cursor: pointer;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li {
+      margin: 0 15px;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-menu a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .mode-toggle {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 1.6em;
+    }
+
+    .cv-download a {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cv-download a:hover {
+      background-color: #2563eb;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary);
+        padding: 10px 0;
+      }
+
+      .nav-menu.show {
+        display: flex;
+      }
+
+      .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-text, .about-image {
+        flex: 1 1 100%;
+      }
+
+      .about-image img {
+        max-width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">O.A.</div>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <ul class="nav-menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="mode-toggle" onclick="toggleMode()">🌗 Toggle</button>
+    </div>
+  </nav>
+
+  <header>
+    <h1>About Me</h1>
+    <p>Get to know my journey and what drives my work in the cloud and product space</p>
+  </header>
+
+  <section>
+    <div class="about-container card">
+      <div class="about-text">
+        <h2>My Journey</h2>
+        <p>
+          I began in field logistics and operations, managing teams and optimizing delivery systems. I moved into product management at Neutrolabs, where I led blockchain-powered tools and drove system uptime by 50%. At Greenlink, I merged sustainability with digital product leadership to deliver real impact.
+        </p>
+        <p>
+          Today, I specialize in cloud product strategy, working at the intersection of technology, sustainability, and usability. I’m constantly learning and currently deepening my cloud engineering and DevOps skills through hands-on projects and cloud certifications.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/Chatgpt Headshot1.png" alt="Okeoghene Akwerigbe">
+      </div>
+    </div>
+
+    <div class="card cv-download">
+      <h2>Download My CV</h2>
+      <p><a href="assets/AO2025SPM.pdf" target="_blank" download>📄 Download CV (PDF)</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Certifications</h2>
+      <p>Coming soon — A showcase of completed cloud and product certifications (AWS, DevOps, Agile, and more).</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Okeoghene Akwerigbe | All rights reserved
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function toggleNav() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

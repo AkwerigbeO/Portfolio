@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okeoghene Akwerigbe | Project Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    nav {
+      background-color: #111827;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #111;
+    }
+    header {
+      background-color: #111827;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+    }
+    .project-item {
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .project-item h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.2em;
+    }
+    footer {
+      background-color: #111827;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+    .gallery { 
+        display: flex;
+        gap: 20px; 
+        flex-wrap: wrap; 
+        margin-top: 15px; 
+    }
+    .gallery img { 
+        width: 45%; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    } 
+    .gallery img:hover {
+        transform: scale(1.02); 
+    } 
+    .lightbox {
+         position: fixed; 
+         top: 0; 
+         left: 0; 
+         width: 100vw; 
+         height: 100vh; 
+         background: rgba(0,0,0,0.8); 
+         display: none; 
+         align-items: center; 
+         justify-content: center; 
+         z-index: 9999; 
+    }
+    .lightbox img { 
+        max-width: 90vw; 
+        max-height: 90vh; 
+        border-radius: 12px; 
+        box-shadow: 0 8px 24px rgba(0,0,0,0.6); 
+    }
+    .lightbox:target {
+         display: flex; 
+    } 
+    #lightbox-container { 
+        display: none; 
+    }
+    .contact-form {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .contact-form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+    <nav>   
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+    </nav>
+  <header>
+    <h1>Okeoghene Akwerigbe – Selected Projects</h1>
+  </header>
+
+  <section>
+    <section class="filter-buttons">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('Cloud')">Cloud</button>
+        <button onclick="filterProjects('Blockchain')">Blockchain</button>
+        <button onclick="filterProjects('Sustainability')">Sustainability</button>
+      </section>
+    
+      <section class="projects">
+        <h2>Selected Projects</h2>
+    
+        <div class="project-item" data-tags="Sustainability Cloud"> <strong>Greenlink Platform</strong> 
+            <p> Designed and launched a sustainability-focused platform helping businesses reduce their carbon footprint. Emphasized measurable impact and product-market fit. </p> 
+            <div class="tags"> <span class="tag">Sustainability</span> <span class="tag">Cloud</span> </div>
+             <p style="margin-top: 10px;"> 📽️ <a href="https://docs.google.com/presentation/d/19OeNuI1GxJD891T_6jWxyMIGEUpFasux6jofCNgOlPI/edit?usp=sharing" target="_blank">View Greenlink Slides</a> </p>
+              <div class="gallery">
+                 <img src="images/greeblink-photo1.png" alt="Greenlink Project 1" onclick="openLightbox(this.src)"> 
+                <img src="images/greeblink-photo2.png" alt="Greenlink Project 2" onclick="openLightbox(this.src)"> 
+            </div> 
+        </div>
+    
+        <div class="project-item" data-tags="Blockchain Cloud">
+          <strong>Neutrolabs Blockchain Ops Suite</strong>
+          Spearheaded performance optimization and new features for a blockchain-based operations tool, reducing system downtime by 50% and boosting user retention.
+          <div class="tags">
+            <span class="tag">Blockchain</span>
+            <span class="tag">Cloud</span>
+          </div>
+        </div>
+    
+        <div class="project-item" data-tags="Cloud">
+          <strong>Cloud Transition Strategy (Freelance)</strong>
+          Advised a logistics firm on migrating infrastructure to AWS. Enabled faster deployments and increased reliability using best-practice architecture patterns.
+          <div class="tags">
+            <span class="tag">Cloud</span>
+          </div>
+        </div>
+      </section>
+    
+      <section class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+      
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    
+      <footer>
+        &copy; 2025 Okeoghene Akwerigbe | All rights reserved
+      </footer>
+    
+      <script>
+        function filterProjects(tag) {
+          const items = document.querySelectorAll('.project-item');
+          items.forEach(item => {
+            const tags = item.getAttribute('data-tags');
+            if (tag === 'all' || tags.includes(tag)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+    
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+    
+        document.querySelectorAll('.project-item').forEach(item => {
+          observer.observe(item);
+        });
+      </script>
+    
+    &copy; 2025 Okeoghene Akwerigbe
+  </footer>
+  <div class="lightbox" id="lightbox-container" onclick="closeLightbox()"> 
+    <img id="lightbox-image" src="" alt="Full view" /> 
+    </div>
+ <script> function openLightbox(src) { document.getElementById("lightbox-image").src = src; document.getElementById("lightbox-container").style.display = "flex"; } function closeLightbox() { document.getElementById("lightbox-container").style.display = "none"; } </script>
+</body>
+</html>
